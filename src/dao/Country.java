@@ -3,18 +3,23 @@ package dao;
 public class Country {
 
     private int id;
-    private String country;
+    private String abbrev;
     private String currency;
 
-    public Country(int id, String country, String currency) {
+    public Country(int id, String abbrev, String currency) {
         this.id = id;
-        this.country = country;
+        this.abbrev = abbrev;
+        this.currency = currency;
+    }
+
+    public Country(String abbrev, String currency) {
+        this.abbrev = abbrev;
         this.currency = currency;
     }
 
     public int getId() {return id;}
-    public String getCountry() {return country;}
-    public void setCountry(String country) {this.country = country;}
+    public String getAbbrev() {return abbrev;}
+    public void setAbbrev(String country) {this.abbrev = country;}
     public String getCurrency() {return currency;}
     public void setCurrency(String currency) {this.currency = currency;}
 
@@ -22,7 +27,7 @@ public class Country {
     public String toString() {
         return "Country{" +
                 "id=" + id +
-                ", country='" + country + '\'' +
+                ", abbrev='" + abbrev + '\'' +
                 ", currency='" + currency + '\'' +
                 '}';
     }

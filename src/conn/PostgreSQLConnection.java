@@ -6,15 +6,15 @@ import java.sql.SQLException;
 
 public class PostgreSQLConnection {
     // PostgreSQL connection details
-    static String url = "jdbc:{proveedor}://{host}:{puerto}/{NombreDeTuDB}";
-    static String user = "{TuUsuarioDeDB}";
-    static String password = "{TuPassword}";
+    static String url = "jdbc:postgresql://aws-0-us-west-1.pooler.supabase.com:6543/postgres";
+    static String user = "postgres.qekyrenqcoehdzlozrsd";
+    static String password = "wSzl6yPfmgX4WUUk";
 
     static Connection conn;
     public static Connection getConnection() {
         try {
             // Register the PostgreSQL driver
-            Class.forName("{DriverDeTuDB}");
+            Class.forName("org.postgresql.Driver");
             // Get the connection
             Connection conn = DriverManager.getConnection(url, user, password);
             if (conn != null) {
@@ -25,7 +25,7 @@ public class PostgreSQLConnection {
             }
 
         } catch (ClassNotFoundException e) {
-            System.out.println("PostgreSQL JDBC driver not found.");
+            System.out.println("JDBC driver not found.");
             e.printStackTrace();
         } catch (SQLException e) {
             System.out.println("Connection failed.");
